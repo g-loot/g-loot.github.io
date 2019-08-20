@@ -1,8 +1,6 @@
-# g-loot.github.io
-
 # Unity G-Loot SDK
 
-# Table of Contents
+## Table of Contents
 
 1. [ Prerequisites](#prerequisites)
 1. [ Install the gloot-unity-sdk](#installing-the-gloot-unity-sdk-unity-package)
