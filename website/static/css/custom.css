@@ -47,6 +47,10 @@ body {
   color: #5a46be;
 }
 
+.blockImage img {
+  max-height: 400px;
+}
+
 /* @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 

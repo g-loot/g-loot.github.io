@@ -51,7 +51,7 @@ class Index extends React.Component {
           {
             content: `User is suggested to play on G-Loot via a call-to-action.
             <br/>This will start our webapp inside the game.`,
-            image: `${baseUrl}img/start-sdk.png`,
+            image: `${baseUrl}img/index/phone4.png`,
             imageAlign: 'right',
             title: 'Start G-Loot SDK',
           },
@@ -65,7 +65,7 @@ class Index extends React.Component {
           {
             content: `Our webapp suggests to play a game for money.
             <br/>This will create a **match** on our server, allowing players to compete against each others`,
-            image: `${baseUrl}img/play-match.png`,
+            image: `${baseUrl}img/index/phone3.png`,
             imageAlign: 'left',
             title: 'Play match for money',
           },
@@ -79,9 +79,9 @@ class Index extends React.Component {
           {
             content: `A player is instantly invited to play, there is no lobby or queue.
             <br/>At the end of the game, a report will be send to our servers`,
-            image: `${baseUrl}img/start-match.png`,
+            image: `${baseUrl}img/index/phone2.png`,
             imageAlign: 'right',
-            title: 'Start Match In Game',
+            title: 'Start a Game',
           },
         ]}
       </Block>
@@ -94,7 +94,7 @@ class Index extends React.Component {
             content: `At the end of the match, our system will deduce if enough players joined in a given time frame to end the match.
             <br/>Then, it will finalize the scores and stakes.
             <br/>Winner(s) receive money in their wallet.`,
-            image: `${baseUrl}img/winner-match.png`,
+            image: `${baseUrl}img/index/phone6.png`,
             imageAlign: 'left',
             title: 'A winner is chosen',
           },
