@@ -1,0 +1,14 @@
+{
+  "docs": {
+    "General": ["about"],
+    "Tracking": ["tracking-web-application-events"],
+    "Integrations": [
+      "integrations-native",
+      "integrations-android",
+      "integrations-unity"
+    ]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}
