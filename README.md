@@ -1,3 +1,0 @@
-# mobile-documentation
-
-Test
