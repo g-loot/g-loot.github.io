@@ -29,14 +29,14 @@ const users = [
 const siteConfig = {
   title: 'G-Loot Docs', // Title for your website.
   tagline: 'Everything you need to know to get started',
-  url: 'https://g-loot.github.io', // Your website URL
-  baseUrl: '/mobile-documentation/', // Base URL for your project */
+  url: 'https://developers.gloot.com', // Your website URL
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'mobile-documentation', // This must match your GitHub repository project name (case-sensitive).
+  projectName: 'g-loot.github.io', // This must match your GitHub repository project name (case-sensitive).
   organizationName: 'g-loot',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
