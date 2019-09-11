@@ -152,7 +152,7 @@ const languages = [
     tag: 'sr',
   },
   {
-    enabled: true,
+    enabled: false,
     name: 'Svenska',
     tag: 'sv-SE',
   },

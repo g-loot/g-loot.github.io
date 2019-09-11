@@ -9,12 +9,14 @@ const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
 
-const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
+// const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+// const GridBlock = CompLibrary.GridBlock;
 
 const HomeSplash = require(process.cwd() +
   '/core/components/HomeSplash/HomeSplash.js');
+const HomeBlock = require(process.cwd() +
+  '/core/components/HomeBlock/HomeBlock.js');
 
 class Index extends React.Component {
   render() {
@@ -23,145 +25,77 @@ class Index extends React.Component {
 
     const Block = props => (
       <Container
-        padding={['bottom', 'top']}
+        // padding={['bottom', 'top']}
         id={props.id}
         background={props.background}
       >
-        <GridBlock
-          align="center"
-          contents={props.children}
-          layout={props.layout}
+        <HomeBlock
+          siteConfig={siteConfig}
+          language={language}
+          title={props.title}
+          image={props.image}
+          imageAlign={props.imageAlign}
+          content={props.content}
+          button={props.button}
         />
       </Container>
     );
 
-    // const FeatureCallout = () => (
-    //   <div
-    //     className="productShowcaseSection paddingBottom"
-    //     style={{ textAlign: 'center' }}
-    //   >
-    //     <h2>Feature Callout</h2>
-    //     <MarkdownBlock>These are features of this project</MarkdownBlock>
-    //   </div>
-    // );
-
-    const StartSdk = () => (
-      <Block background="light">
-        {[
-          {
-            content: `User is suggested to play on G-Loot via a call-to-action.
-            <br/>This will start our webapp inside the game.`,
-            image: `${baseUrl}img/index/phone4.png`,
-            imageAlign: 'right',
-            title: 'Start G-Loot SDK',
-          },
-        ]}
-      </Block>
+    const Enable = () => (
+      <Block
+        title={'What we enable'}
+        image={`${baseUrl}img/index/phone6.png`}
+        imageAlign={'left'}
+        content={`
+            With the G-Loot SDK you will be able to provide your current
+            and future players with a new, unique and highly engaging way of
+            competing. All this possible within just a couple of steps! We turn
+            your game into a competitive powerhouse where players can compete
+            against each other In various contests with actual cash prizes.
+        `}
+        button={{ href: `about.html`, text: 'Get started' }}
+      />
     );
 
-    const PlayMatch = () => (
-      <Block>
-        {[
-          {
-            content: `Our webapp suggests to play a game for money.
-            <br/>This will create a **match** on our server, allowing players to compete against each others`,
-            image: `${baseUrl}img/index/phone3.png`,
-            imageAlign: 'left',
-            title: 'Play match for money',
-          },
-        ]}
-      </Block>
+    const Includes = () => (
+      <Block
+        background="light"
+        title={'What we includes'}
+        image={`${baseUrl}img/index/phone2-3.png`}
+        imageAlign={'right'}
+        content={`
+      <br />-  Easy on-boarding
+      <br />-  No queue time
+      <br />-  Effortless Matchmaking 
+      <br />-  Quick results
+      <br />-  Real Money rewards 
+      <br />-  Easy deposits & withdrawals
+      <br />-  Analytics`}
+        button={{ href: `about.html`, text: 'Get started' }}
+      />
     );
 
-    const StartMatch = () => (
-      <Block background="dark">
-        {[
-          {
-            content: `A player is instantly invited to play, there is no lobby or queue.
-            <br/>At the end of the game, a report will be send to our servers`,
-            image: `${baseUrl}img/index/phone2.png`,
-            imageAlign: 'right',
-            title: 'Start a Game',
-          },
-        ]}
-      </Block>
+    const Monetization = () => (
+      <Block
+        title={'Monetization'}
+        image={`${baseUrl}img/index/phone3-4.png`}
+        imageAlign={'left'}
+        content={`
+      We give you an alternative way to monetize your players, 
+      while at the same time providing your players with rewards 
+      that means more than just bragging rights.
+         `}
+        button={{ href: `about.html`, text: 'Get started' }}
+      />
     );
-
-    const WinnerMatch = () => (
-      <Block background="light">
-        {[
-          {
-            content: `At the end of the match, our system will deduce if enough players joined in a given time frame to end the match.
-            <br/>Then, it will finalize the scores and stakes.
-            <br/>Winner(s) receive money in their wallet.`,
-            image: `${baseUrl}img/index/phone6.png`,
-            imageAlign: 'left',
-            title: 'A winner is chosen',
-          },
-        ]}
-      </Block>
-    );
-
-    // const Features = () => (
-    //   <Block layout="fourColumn">
-    //     {[
-    //       {
-    //         content: 'This is the content of my feature',
-    //         image: `${baseUrl}img/undraw_react.svg`,
-    //         imageAlign: 'top',
-    //         title: 'Feature One',
-    //       },
-    //       {
-    //         content: 'The content of my second feature',
-    //         image: `${baseUrl}img/undraw_operating_system.svg`,
-    //         imageAlign: 'top',
-    //         title: 'Feature Two',
-    //       },
-    //     ]}
-    //   </Block>
-    // );
-
-    // const Showcase = () => {
-    //   if ((siteConfig.users || []).length === 0) {
-    //     return null;
-    //   }
-
-    //   const showcase = siteConfig.users
-    //     .filter(user => user.pinned)
-    //     .map(user => (
-    //       <a href={user.infoLink} key={user.infoLink}>
-    //         <img src={user.image} alt={user.caption} title={user.caption} />
-    //       </a>
-    //     ));
-
-    //   const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-    //   return (
-    //     <div className="productShowcaseSection paddingBottom">
-    //       <h2>Who is Using This?</h2>
-    //       <p>This project is used by all these people</p>
-    //       <div className="logos">{showcase}</div>
-    //       <div className="more-users">
-    //         <a className="button" href={pageUrl('users.html')}>
-    //           More {siteConfig.title} Users
-    //         </a>
-    //       </div>
-    //     </div>
-    //   );
-    // };
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <h1>How does it work?</h1>
-          {/* <Features /> */}
-          {/* <FeatureCallout /> */}
-          <StartSdk />
-          <PlayMatch />
-          <StartMatch />
-          <WinnerMatch />
-          {/* <Showcase /> */}
+          <Enable />
+          <Includes />
+          <Monetization />
         </div>
       </div>
     );

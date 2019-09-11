@@ -27,7 +27,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'G-Loot Docs', // Title for your website.
+  title: 'G-Loot Documentation', // Title for your website.
   tagline: 'Everything you need to know to get started',
   url: 'https://developers.gloot.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -47,7 +47,7 @@ const siteConfig = {
     { doc: 'about', label: 'Docs' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
-    { blog: true, label: 'Blog' },
+    // { blog: true, label: 'Blog' },
     // { languages: true },
   ],
 
@@ -67,13 +67,18 @@ const siteConfig = {
 
   /* Add Custom Stylesheets */
   stylesheets: [
-    'https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap',
-    // '/css/code-block-buttons.css',
+    // 'https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap',
+    '/css/global.css',
+    '/css/header.css',
+    '/css/landing.css',
+    '/css/sidebar.css',
+    '/css/custom.css',
+    '/fonts/fonts.css',
   ],
 
   /* Custom fonts for website */
   fonts: {
-    roboto: ['Roboto', 'sans-serif'],
+    // roboto: ['Roboto', 'sans-serif'],
     // myOtherFont: ['-apple-system', 'system-ui'],
   },
 

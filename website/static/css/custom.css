@@ -1,55 +1,23 @@
-body {
-  font-family: $roboto;
-}
-
-.fixedHeaderContainer header .headerTitleWithLogo {
-  font-weight: 100;
-  font-size: 15px;
-}
-
 .post a {
   text-decoration: underline;
 }
 
-.homeContainer {
-  background-color: #1c1c28;
-  color: white;
-}
-
-.homeSplashFade {
-  display: flex;
-  justify-content: center;
-  max-width: 1350px;
-  padding: 150px 0;
-  margin: 0 auto;
-}
-
-.homeSplashFade > div {
-  max-width: 30%;
-  text-align: left;
-}
-
-.button.buttonDarkBg {
-  color: #00ff7f;
-  border-color: #00ff7f;
-  transition: 200ms ease-in;
+.button.large {
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .button.buttonDarkBg:hover {
   border-color: white;
 }
 
-.mainContainer h1 {
-  text-align: center;
+.blockContent {
+  text-align: left;
 }
 
-.toc .toggleNav ul li.navListItemActive a {
-  color: #5a46be;
-}
-
-.blockImage img {
-  max-height: 400px;
-}
+/* .blockContent h2 {
+  font-weight: bold;
+} */
 
 /* @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
