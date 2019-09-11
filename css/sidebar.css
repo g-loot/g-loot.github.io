@@ -1,5 +1,5 @@
 .toc .toggleNav ul li.navListItemActive a {
-  color: #00cd62;
+  color: #00cd62 !important;
 }
 
 .toc .toggleNav ul li a {
