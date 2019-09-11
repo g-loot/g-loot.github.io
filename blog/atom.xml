@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.gloot.com/blog</id>
-    <title>G-Loot Docs Blog</title>
+    <title>G-Loot Documentation Blog</title>
     <updated>2017-10-24T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.gloot.com/blog"/>
-    <subtitle>The best place to stay up-to-date with the latest G-Loot Docs news and events.</subtitle>
+    <subtitle>The best place to stay up-to-date with the latest G-Loot Documentation news and events.</subtitle>
     <logo>https://developers.gloot.com/img/logo_green.png</logo>
     <rights>Copyright © 2019 G-Loot</rights>
     <entry>
