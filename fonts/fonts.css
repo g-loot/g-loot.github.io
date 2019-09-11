@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Stratum2';
+  src: url('./stratum/Stratum2-Black.otf') format('opentype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Stratum2';
+  src: url('./stratum/Stratum2-Bold.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Stratum2';
+  src: url('./stratum/Stratum2-Light.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Stratum2';
+  src: url('./stratum/Stratum2-Medium.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Stratum2';
+  src: url('./stratum/Stratum2-Regular.otf') format('opentype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Stratum2';
+  src: url('./stratum/Stratum2-Thin.otf') format('opentype');
+  font-weight: 100;
+}

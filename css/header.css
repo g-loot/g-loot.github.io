@@ -1,0 +1,8 @@
+.fixedHeaderContainer header .headerTitleWithLogo {
+  font-weight: 200;
+  font-size: 19px;
+}
+
+.navigationSlider .slidingNav ul li a {
+  font-weight: 200;
+}
