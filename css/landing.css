@@ -86,13 +86,16 @@
     background-position-x: 170px;
     padding: 60px 0;
   }
-  .homeSplashFade > div {
-    max-width: unset;
-    margin: 0 50px;
-  }
   .homeBlock > div {
     max-width: 100%;
     margin: 0 30px;
+  }
+}
+
+@media only screen and (min-width: 1160) {
+  .homeSplashFade > div {
+    max-width: unset;
+    margin: 0 50px;
   }
 }
 
