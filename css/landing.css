@@ -81,7 +81,7 @@
   flex-basis: unset; */
 }
 
-@media only screen and (max-device-width: 736px) {
+@media only screen and (max-width: 736px) {
   .homeSplashFade {
     background-position-x: 170px;
     padding: 60px 0;
@@ -92,7 +92,7 @@
   }
 }
 
-@media only screen and (max-device-width: 1160px) {
+@media only screen and (max-width: 1160px) {
   .homeSplashFade > div {
     max-width: unset;
     margin: 0 50px;
