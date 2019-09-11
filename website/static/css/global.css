@@ -1,18 +1,18 @@
 body {
-  font-family: 'Stratum2';
+  font-family: 'Stratum2' !important;
 }
 
 h1 {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 h2 {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 p {
-  font-weight: 200;
-  line-height: 30px;
+  font-weight: 200 !important;
+  line-height: 30px !important;
 }
 
 /* @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

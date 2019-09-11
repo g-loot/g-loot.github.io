@@ -76,6 +76,15 @@ const siteConfig = {
     '/fonts/fonts.css',
   ],
 
+  separateCss: [
+    'static/css/global.css',
+    'static/css/header.css',
+    'static/css/landing.css',
+    'static/css/sidebar.css',
+    'static/css/custom.css',
+    'static/fonts/fonts.css',
+  ],
+
   /* Custom fonts for website */
   fonts: {
     // roboto: ['Roboto', 'sans-serif'],
