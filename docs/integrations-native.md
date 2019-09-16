@@ -148,6 +148,25 @@ the following command is used to send the score bound to the most recent match t
 <!--END_DOCUSAURUS_CODE_TABS-->
 ​
 
+### Show the G-Loot webapp
+
+When you are done with the current match inside your game, it is probably a good idea to
+take the user back to the G-Loot webapp flow. 
+
+The `takeUserToUrlRoot` parameter, if true, takes the user back to the G-Loot webapp root.
+If not, the latest page visited will become visible again.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Swift-->
+```swift
+SdkManager.Companion().instance()?.showWebApp(takeUserToUrlRoot: false)
+```
+<!--Kotlin-->
+```kotlin
+SdkManager.instance()?.showWebApp(false)
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### Send an achievement
 ​
 The G-Loot SDK supports unlocking and displaying achievements. Currently `onboarding` is available
