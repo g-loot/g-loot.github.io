@@ -166,19 +166,3 @@ SdkManager.Companion().instance()?.showWebApp(takeUserToUrlRoot: false)
 SdkManager.instance()?.showWebApp(false)
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
-
-### Send an achievement
-​
-The G-Loot SDK supports unlocking and displaying achievements. Currently `onboarding` is available
-as a default way to reward the player when they have completed a onboarding process in a game.
-​
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Swift-->
-```swift
-SdkManager.Companion().instance()?.sendAchievement(achievementId: "onboarding")
-```
-<!--Kotlin-->
-```kotlin
-SdkManager.instance()?.sendAchievement(achievementId = "onboarding")
-```
-<!--END_DOCUSAURUS_CODE_TABS-->

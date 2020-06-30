@@ -89,11 +89,6 @@ GlootSdk.Instance.SendMatchReport(scoreValue = 200, description = "200 points", 
 
 > **isFinishedResult** is used to mark the match report as final, and that the score no longer can be updated
 
-#### In order to let the G-Loot backend know that a user has gotten an achievement the following method can be used:
-```csharp
-GlootSdk.Instance.SendAchievement(string id);
-```
-The specific achievment ID is created by G-Loot, and if you want to add achievements to your game, please contact us and we will help you out.
 
 #### Trackable Events
 
