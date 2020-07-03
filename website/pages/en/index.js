@@ -59,7 +59,7 @@ class Index extends React.Component {
     const Includes = () => (
       <Block
         background="light"
-        title={'What we includes'}
+        title={'What we include'}
         image={`${baseUrl}img/index/phone2-3.png`}
         imageAlign={'right'}
         content={`
