@@ -5,52 +5,63 @@
     "previous": "Previous",
     "tagline": "Everything you need to know to get started",
     "docs": {
-      "about": {
+      "mobile/about": {
         "title": "About",
         "sidebar_label": "About"
       },
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
-      },
-      "doc2": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
-      },
-      "doc3": {
-        "title": "This is document number 3"
-      },
-      "doc4": {
+      "mobile/doc4": {
         "title": "Other Document"
       },
-      "doc5": {
+      "mobile/doc5": {
         "title": "Fifth Document"
       },
-      "integrations-android": {
+      "mobile/integrations-android": {
         "title": "Integration for Android",
         "sidebar_label": "Android"
       },
-      "integrations-native": {
+      "mobile/integrations-native": {
         "title": "Integration for Native",
         "sidebar_label": "Native"
       },
-      "integrations-unity": {
+      "mobile/integrations-unity": {
         "title": "Integration for Unity",
         "sidebar_label": "Unity"
       },
-      "tracking-web-application-events": {
+      "mobile/tracking-web-application-events": {
         "title": "Web Application Events",
         "sidebar_label": "Web Application Events"
+      },
+      "voucher/delivering-vouchers": {
+        "title": "Delivering Vouchers",
+        "sidebar_label": "Delivering vouchers"
+      },
+      "voucher/getting-vouchers": {
+        "title": "Getting Vouchers",
+        "sidebar_label": "Getting vouchers"
+      },
+      "voucher/hosting-tournament": {
+        "title": "Hosting the tournament",
+        "sidebar_label": "Hosting the tournament"
+      },
+      "voucher/intro": {
+        "title": "Voucher Prize Distribution",
+        "sidebar_label": "Introduction"
+      },
+      "voucher/prerequisites": {
+        "title": "prerequisites & limitations",
+        "sidebar_label": "prerequisites & limitations"
       }
     },
     "links": {
-      "Docs": "Docs"
+      "Mobile game wrapper": "Mobile game wrapper",
+      "Voucher prize distribution": "Voucher prize distribution"
     },
     "categories": {
       "General": "General",
       "Tracking": "Tracking",
       "Integrations": "Integrations",
-      "First Category": "First Category"
+      "Introduction": "Introduction",
+      "The process": "The process"
     }
   },
   "pages-strings": {

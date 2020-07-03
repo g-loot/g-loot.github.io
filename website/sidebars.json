@@ -1,14 +1,19 @@
 {
   "docs": {
-    "General": ["about"],
-    "Tracking": ["tracking-web-application-events"],
+    "General": ["mobile/about"],
+    "Tracking": ["mobile/tracking-web-application-events"],
     "Integrations": [
-      "integrations-native",
-      "integrations-android",
-      "integrations-unity"
+      "mobile/integrations-native",
+      "mobile/integrations-android",
+      "mobile/integrations-unity"
     ]
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Introduction": ["voucher/intro", "voucher/prerequisites"],
+    "The process": [
+      "voucher/getting-vouchers",
+      "voucher/hosting-tournament",
+      "voucher/delivering-vouchers"
+    ]
   }
 }

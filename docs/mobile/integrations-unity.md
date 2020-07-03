@@ -6,24 +6,25 @@ sidebar_label: Unity
 
 ## Prerequisites
 
-* Currently we only support iOS.
-* You need the latest version of XCode and XCode Tools installed.
-* You need to have Unity installed.
-* Bitcode needs to be disabled for iOS builds.
+- Currently we only support iOS.
+- You need the latest version of XCode and XCode Tools installed.
+- You need to have Unity installed.
+- Bitcode needs to be disabled for iOS builds.
 
 ## Installing the gloot-unity-sdk unity package
 
 In the project explorer, Right click `Assets` and navigate to `Import Package` and then click `Custom Package`
 find the `gloot-unity-sdk.unitypackage` and press **Open**
 
-![image howtoimport](assets/howtoimport.png)
+![image howtoimport](assets/mobile/howtoimport.png)
 
 Once done, make sure the following is true:
+
 1. That the `Plugins` folder exists within the `Assets` folder
 2. Within the `Plugins` folder, Make sure a folder called `iOS` exists
 3. Make sure that the libSharedCodeUniversal.a file exists in the `iOS` folder
 
-![image howtoimport](assets/verify.png)
+![image howtoimport](assets/mobile/verify.png)
 
 ## Setting the SDK up in Unity
 
@@ -31,7 +32,7 @@ Once done, make sure the following is true:
 
 2. Enter the provided G-Loot SDK ID into the field that now should be shown under the now attached GlootSdk (script)
 
-![image howtoimport](assets/configure.png)
+![image howtoimport](assets/mobile/configure.png)
 
 ## Using the SDK in Unity
 
@@ -48,14 +49,16 @@ GlootSdk.Instance.RegisterSdkReadyCallBack(() =>
 
 });
 ```
-*The same kind of solution could be used to hide a spinner*
+
+_The same kind of solution could be used to hide a spinner_
 
 #### To show the webapp that is bound to your game and G-Loot id, simply run:
+
 ```csharp
 GlootSdk.Instance.ShowWebApp()
 ```
-*(the webapp will later handle the navigation back to your game automaticly)*
 
+_(the webapp will later handle the navigation back to your game automaticly)_
 
 #### To handle when a match is started from the G-Loot webapp
 
@@ -75,8 +78,8 @@ The match object contains properties such as seed for the specific match. This m
 The logic for what you want to show when the match is started from the G-Loot webapp, is up to you.
 We recommend taking the user directly the actual game.
 
-
 #### When you want to report a score to the G-Loot backend it is as simple as using this method:
+
 ```
 GlootSdk.Instance.SendMatchReport(scoreValue = 200, description = "200 points", autoLossReason = "", isFinishedResult = true);
 ```
@@ -90,15 +93,17 @@ GlootSdk.Instance.SendMatchReport(scoreValue = 200, description = "200 points", 
 > **isFinishedResult** is used to mark the match report as final, and that the score no longer can be updated
 
 #### In order to let the G-Loot backend know that a user has gotten an achievement the following method can be used:
+
 ```csharp
 GlootSdk.Instance.SendAchievement(string id);
 ```
+
 The specific achievment ID is created by G-Loot, and if you want to add achievements to your game, please contact us and we will help you out.
 
 #### Trackable Events
 
 If needed, we offer a way to integrate events that happen in the G-Loot webapp
-into your analytics tool of choice. 
+into your analytics tool of choice.
 
 The following code allows you to
 map the events into your internal analytics process:
@@ -111,8 +116,3 @@ GlootSdk.Instance.RegisterTrackableEventsCallback((eventId, eventPayload) =>
 ```
 
 Take a look at our [Webapp Tracking Events](tracking-web-application-events.md) to see which tracking events are being sent out.
-
-
-
-
-

@@ -27,7 +27,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'G-Loot Documentation', // Title for your website.
+  title: 'G-Loot Esports Platform', // Title for your website.
   tagline: 'Everything you need to know to get started',
   url: 'https://developers.gloot.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -44,7 +44,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'about', label: 'Docs' },
+    { doc: 'mobile/about', label: 'Mobile game wrapper' },
+    { doc: 'voucher/intro', label: 'Voucher prize distribution' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
     // { blog: true, label: 'Blog' },
@@ -113,7 +114,7 @@ const siteConfig = {
 
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
-  docsSideNavCollapsible: true,
+  docsSideNavCollapsible: false,
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
