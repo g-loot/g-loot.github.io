@@ -1,7 +1,7 @@
 ---
 id: prerequisites
 title: prerequisites & limitations
-sidebar_label: prerequisites & limitations
+sidebar_label: Prerequisites & limitations
 ---
 
 In order to be able to use this service, your game must meet the following conditions:
