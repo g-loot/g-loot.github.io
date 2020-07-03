@@ -10,7 +10,7 @@ Once the tournament is over and leaderboard is set and completed. The last step 
 
 ## Delivering the vouchers
 
-The game studio needs to deliver the vouchers to the winning players. This could be done however the studio see fit. It migh be shown in game as a notification or modal, or be sent to the users email.
+The game studio needs to deliver the vouchers to the winning players. This could be done however the studio see fit. It migh be shown in game as a notification or modal, or be sent to the user's email.
 
 ## Redeeming the vouchers
 

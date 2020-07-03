@@ -6,11 +6,11 @@ sidebar_label: Hosting the tournament
 
 Once the vouchers has been delievered, the tournament may begin.
 
-The ways that a tournament could be implemented are manifold. As stated previously, as long as the competition produces as result list sorted on a metric that is determined by skill (i.e. a leaderboard), the game studio has creative freedom within these restrictions.
+The ways that a tournament could be implemented are manifold. As stated previously, as long as the competition produces a result list sorted on a metric that is determined by skill (i.e. a leaderboard), the game studio has creative freedom within these restrictions.
 
 For example, it may be the 100 fastest players to solve a certain solitaire deck, or the winners of a more conventional bracket tournament in a card game.
 
-In the graphical interface of the game, it must be clear that the competition is legally hosted by G-Loot. The user have to read and accept the G-Loot terms & conditions before entering the game.
+In the graphical interface of the game, it must be clear that the competition is legally hosted by G-Loot. The user has to read and accept the G-Loot terms & conditions before entering the game.
 
 ![image hosting](assets/voucher/hosting.png)
 
