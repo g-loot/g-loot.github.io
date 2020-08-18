@@ -20,11 +20,33 @@ G-Loot has legal requirements on the players participating in the tournament. Th
 
 To help prevent players that legally cannot withdraw their winnings from entering the contest, G-Loot provides a REST endpoint where the game can send the players IP-address and get back information regarding whether or not the player is in an allowed region. The game developers can then, based on this value, prevent players from entering the contest in any way they seem fit. For example by disabling the register button, or by showing an alert modal when the player tries to join the contest.
 
+The url to the endpoint is: `https://compliance-gloot.appspot.com/api/v1/ip/{the-ip-you-want-to-check}`
+
+A `GET` call to this endpoint will yield a response in this format:
+
+```
+{
+  "alpha2":"FR",
+  "country":"France",
+  "region":"Nouvelle-Aquitaine",
+  "city":"Bordeaux",
+  "blocked":true
+}
+```
+
+Where the boolean `blocked`-property determines if that IP is allowed to compoete on our platform.
+
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Javascript-->
 
 ```nodeJs
-// coming soon
+async function checkIp(ip) {
+  const url = `https://compliance-gloot.appspot.com/api/v1/ip/${ip}`;
+  const response = await fetch(url);
+  return await response.json();
+}
+
+checkIp('13.49.132.198').then(console.log);
 ```
 
 <!--Kotlin-->
@@ -34,3 +56,5 @@ To help prevent players that legally cannot withdraw their winnings from enterin
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+Should a user enter a tournament without being legally allowed to do so (by using a VPN or otherwise), the user will be prevented from withdrawing any winnings at our KYC-check in the withdrawal process. This results in a bad user experience and this is the reason why we encourage the game studio to prevent users from entering tournaments if they are not legally eligible to play in them.

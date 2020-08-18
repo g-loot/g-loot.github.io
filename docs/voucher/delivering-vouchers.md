@@ -14,4 +14,4 @@ The game studio needs to deliver the vouchers to the winning players. This could
 
 ## Redeeming the vouchers
 
-The winners will then click their voucher link and redeem it on https://wallet.gloot.com, and proceed with the instructions to withdraw their money.
+The winners will then click their voucher link and redeem it on `https://wallet.gloot.com/redeemvoucher?voucher_id={the-voucher-id}` and proceed with the instructions to withdraw their money.
