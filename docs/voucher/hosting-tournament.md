@@ -46,7 +46,12 @@ async function checkIp(ip) {
   return await response.json();
 }
 
-checkIp('13.49.132.198').then(console.log);
+async function isPlayerAllowed(ip) {
+  const data = await checkIp(ip);
+  return !data.blocked;
+}
+
+isPlayerAllowed('13.49.132.198').then(console.log);
 ```
 
 <!--Kotlin-->
