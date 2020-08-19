@@ -40,24 +40,88 @@ Where the boolean `blocked`-property determines if that IP is allowed to compoet
 <!--Javascript-->
 
 ```nodeJs
-async function checkIp(ip) {
+async function getGeoData(ip) {
   const url = `https://compliance-gloot.appspot.com/api/v1/ip/${ip}`;
   const response = await fetch(url);
   return await response.json();
 }
 
 async function isPlayerAllowed(ip) {
-  const data = await checkIp(ip);
-  return !data.blocked;
+  try {
+    const data = await getGeoData(ip);
+    return !data.blocked;
+  } catch (e) {
+    return false;
+  }
 }
 
 isPlayerAllowed('13.49.132.198').then(console.log);
 ```
 
-<!--Kotlin-->
+<!--Java-->
 
-```kotlin
-// coming soon
+```java
+  @Data
+  public static class IpGeoData {
+    private String alpha2;
+    private String country;
+    private String region;
+    private String city;
+    private boolean blocked = true;
+  }
+  public IpGeoData getGeoData(String ip) throws IOException {
+    URL url = new URL("https://compliance-gloot.appspot.com/api/v1/ip/" + ip);
+    return new ObjectMapper().readValue(url.openStream(), IpGeoData.class);
+  }
+  public boolean isPlayerAllowed(String ip) {
+    try {
+      return !getGeoData(ip).blocked;
+    } catch (IOException e) {
+      return false;
+    }
+  }
+  @Test
+  public void testIfPlayerIsAllowed() throws Exception {
+    assertFalse(isPlayerAllowed("127.0.0.1"));
+  }
+```
+
+<!--Go-->
+
+```go
+ import (
+	"encoding/json"
+	"fmt"
+	"log"
+	"net/http"
+	"net/url"
+)
+// use "golang.org/x/oauth2" to create a proper OAuth2 client
+var complianceClient *http.Client
+func isIPBlocked(ip string) (blocked bool) {
+	blocked = true
+	var res *http.Response
+	url := fmt.Sprintf("https://compliance-gloot.appspot.com/api/v1/ip/%s", url.PathEscape(ip))
+	if req, err := http.NewRequest(http.MethodGet, url, nil); err != nil {
+		log.Println(err)
+		return
+	} else {
+		if res, err = complianceClient.Do(req); err != nil {
+			log.Println(err)
+			return
+		}
+	}
+	defer res.Body.Close()
+	j := struct {
+		Blocked bool `json:"blocked"`
+	}{}
+	if err := json.NewDecoder(res.Body).Decode(&j); err != nil {
+		log.Println(err)
+	} else {
+		blocked = j.Blocked
+	}
+	return
+}
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
