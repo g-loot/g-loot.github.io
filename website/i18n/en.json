@@ -50,6 +50,10 @@
       "voucher/prerequisites": {
         "title": "prerequisites & limitations",
         "sidebar_label": "Prerequisites & limitations"
+      },
+      "voucher/sls-intro": {
+        "title": "Simple leaderboard service",
+        "sidebar_label": "Introduction"
       }
     },
     "links": {
@@ -61,7 +65,8 @@
       "Tracking": "Tracking",
       "Integrations": "Integrations",
       "Introduction": "Introduction",
-      "The process": "The process"
+      "The process": "The process",
+      "leaderboard service": "leaderboard service"
     }
   },
   "pages-strings": {
