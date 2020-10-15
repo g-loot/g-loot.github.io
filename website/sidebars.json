@@ -15,6 +15,10 @@
       "voucher/hosting-tournament",
       "voucher/delivering-vouchers"
     ],
-    "leaderboard service": ["voucher/sls-intro"]
+    "Leaderboard service": [
+      "voucher/sls-intro",
+      "voucher/sls-guide",
+      "voucher/sls-api"
+    ]
   }
 }

@@ -51,6 +51,14 @@
         "title": "prerequisites & limitations",
         "sidebar_label": "Prerequisites & limitations"
       },
+      "voucher/sls-api": {
+        "title": "API Specification",
+        "sidebar_label": "API specification"
+      },
+      "voucher/sls-guide": {
+        "title": "Guide",
+        "sidebar_label": "Guide"
+      },
       "voucher/sls-intro": {
         "title": "Simple leaderboard service",
         "sidebar_label": "Introduction"
@@ -66,7 +74,7 @@
       "Integrations": "Integrations",
       "Introduction": "Introduction",
       "The process": "The process",
-      "leaderboard service": "leaderboard service"
+      "Leaderboard service": "Leaderboard service"
     }
   },
   "pages-strings": {
