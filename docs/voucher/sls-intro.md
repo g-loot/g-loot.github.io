@@ -24,4 +24,4 @@ We have API endpoints for doing the following:
 2. List all active leaderboard for your game
 3. Get all the scores for a leaderboard (if you wish to show it in the game rather than redirecting the users to our domain)
 
-If this sounds applicable to your use-case, please continue reading for the full api specification.
+If this sounds applicable to your use-case, please continue reading.
