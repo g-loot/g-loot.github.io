@@ -20,7 +20,7 @@ Depending on how your game works, there might be multiple ways in which our lead
 
 Once some event has happened that produced a sortable metric, for example when a match has been completed or an achievement has been fulfilled, that metric should be reported as a score to the relevant leaderboard. This is done via a `POST` request to the `score`-endpoint. The score should be posted to the specific game and leaderboard-id specified by G-Loot.
 
-Each leaderboard has a retry strategy and number of retries configured, these two properties will together dictate the constraints of the score reporting-process. See the [retires](#retries)-section for further information regarding this.
+Each leaderboard has a retry strategy and number of retries configured, these two properties will together dictate the constraints of the score reporting-process. See the [retries](#retries)-section for further information regarding this.
 
 ### (Optional) Gathering missing properties
 
