@@ -11,7 +11,7 @@ This section is relevant to you if your game:
 - use a third party service for matchmaking and have limited access to game results
 - for any other reason can not produce a leaderboard
 
-Our _simple leaderboard service_ makes it easy to report game scores to our servers, and we host the leaderboard for you. The flow is something like this:
+Our _simple leaderboard service_ makes it easy to report game scores to our servers, and we host the leaderboard for you. The service is extremely adaptable and usage may range from a close to zero technical integration, to a more full-fledged sophisticated solution. A basic use-case may look something like this:
 
 1. We configure a leaderboard for you.
 2. You get a service account token to use for authenticating against our service.

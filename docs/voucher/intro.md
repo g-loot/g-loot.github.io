@@ -1,10 +1,10 @@
 ---
 id: intro
-title: Voucher Prize Distribution
+title: G-Rewards
 sidebar_label: Introduction
 ---
 
-The voucher prize distribution service is a way for game developers to enable real-money prizes in their products. The integration is very lightweight and non-intrusive and leaves much creative freedom to the game studio. This service is suitable for promotional events and larger tournaments where there is no entry fee.
+G-Rewards is a collection of services whose aim is to to enable game developers to use real-money prizes in their products. The integration is very lightweight and non-intrusive and leaves much creative freedom to the game studio. This service is suitable for promotional events and larger tournaments where there is no entry fee.
 
 ## What we provide
 

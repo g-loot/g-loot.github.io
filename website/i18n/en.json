@@ -44,7 +44,7 @@
         "sidebar_label": "Hosting the tournament"
       },
       "voucher/intro": {
-        "title": "Voucher Prize Distribution",
+        "title": "G-Rewards",
         "sidebar_label": "Introduction"
       },
       "voucher/prerequisites": {
@@ -66,7 +66,7 @@
     },
     "links": {
       "Mobile game wrapper": "Mobile game wrapper",
-      "Voucher prize distribution": "Voucher prize distribution"
+      "G-Rewards": "G-Rewards"
     },
     "categories": {
       "General": "General",

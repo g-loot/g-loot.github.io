@@ -23,6 +23,15 @@ sidebar_label: API specification
 - [Leaderboard](#leaderboard)
 - [Score](#score)
 
+### Response Headers
+
+Each API-response will contain these headers.
+
+| name                    | type   | example       | description                                                  |
+| ----------------------- | ------ | ------------- | ------------------------------------------------------------ |
+| x-started-processing-at | number | 1603188776750 | Epoch time (ms) when the server started processing the call  |
+| x-ended-processing-at   | number | 1603188776750 | Epoch time (ms) when the server finished processing the call |
+
 ## Authorization
 
 All endpoints require a service account token in the `Authorization`-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type `Bearer` in the header.
@@ -169,6 +178,27 @@ Submits a result that should be displayed on the leaderboard.
 
 ### Leaderboard
 
+| description            | Required | string  | A short text describing the process and objectives of the tournament.                                                                                                                      |
+| ---------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| endDate                | no       | integer | Epoch time (ms) when the leaderboard will turn inactive.                                                                                                                                   |
+| exteralReference       | no       | string  | An id corresponding to a game-internal asset, for example an achievement-id that the leaderboard should be associated with.                                                                |
+| gameId                 | yes      | string  | Id of the game this leaderboard belongs to.                                                                                                                                                |
+| icon                   | no       | url     | Icon for the leaderboard that will be displayed on the generated leaderboard page hosted by g-loot. If none is specified, the leaderboard will use the icon specified on the game instead. |
+| id                     | yes      | string  | The id of the leaderboard.                                                                                                                                                                 |
+| isActive               | yes      | boolean | If true, the leaderboard still accepts score-submisions.                                                                                                                                   |
+| maximumNumberOfWinners | yes      | integer | The total amount of winners, should be an exact match with the amount of vouchers bought.                                                                                                  |
+| name                   | yes      | string  | The name of the tournament/challenge that will be displayed on the leaderboard.                                                                                                            |
+| numberOfParticipants   | yes      | integer | The amount of players currently registered on the leaderboard.                                                                                                                             |
+| numberOfRetries        | no       | integer | The number of attempts each player gets to submit their score.                                                                                                                             |
+| retryStrategy          | yes      | String  | Defines how many times a score could be submitted on behalf of a user.                                                                                                                     |
+| scoreUpdatedDate       | no       | integer | The last time a score was submitted to the leaderboard.                                                                                                                                    |
+| shouldCloseWhenFull    | yes      | boolean | If set, the leaderboard will turn inactive when numberOfParticipants matches maximumNumberOfWinners.                                                                                       |
+| startDate              | no       | integer | Epoch time (ms) when the leaderboard will turn active.                                                                                                                                     |
+| type                   | no       | string  | A string that could be used to group leaderboards visually if they are rendered natively in the game.                                                                                      |
+| url                    | no       | url     | A url to a page somehow related to the leaderboard.                                                                                                                                        |
+
+#### JSON example
+
 ```
 {
   "gameId": "wonky-weavers",
@@ -179,6 +209,7 @@ Submits a result that should be displayed on the leaderboard.
   "icon": "https://path.to/my-game-icon.png",
   "description": "The 200 people to complete the whole campaign on easy in 60 minutes gets $20!",
   "type": "achievement-goldrush",
+  "exteralReference": "optional-external-reference",
   "isActive": true,
   "url": "https://cool.games/wonky-weavers",
   "scoreUpdatedDate": 1602769646,

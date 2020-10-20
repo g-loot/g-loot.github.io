@@ -45,7 +45,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'mobile/about', label: 'Mobile game wrapper' },
-    { doc: 'voucher/intro', label: 'Voucher prize distribution' },
+    { doc: 'voucher/intro', label: 'G-Rewards' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
     // { blog: true, label: 'Blog' },
