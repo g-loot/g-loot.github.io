@@ -152,7 +152,7 @@ Submits a result that should be displayed on the leaderboard.
 ```
 {
   "result": {
-    /* Some leaderboards can be configured to have multiple tires (or entries) per user,
+    /* Some leaderboards can be configured to have multiple tries (or entries) per user,
     all the tries that user has made are contained here.*/
     "entries": [
       {

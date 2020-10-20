@@ -55,3 +55,7 @@ For example, when a leaderboard is configured, an id corresponding to an in-game
 Some games might want to hold recurring promotional events, such as a world championship every year, or quarterly tournaments. In this case, it might look more suitable and professional to show the leaderboard natively in the game with a custom design instead of redirecting the users to our default leaderboard page.
 
 To do this, the leaderboard could be fetched form the `GET /score`-endpoint and a custom UI built to display this data.
+
+### Grouping leaderboards
+
+Leaderboards have the optional `type`-property. This property is meant to be used to group several leaderboards under a certain type. We use this property to visually group the leaderboards on our game-specific page. Some games might want to programatically show all active leaderboards (probably presented conceptually as tournaments/challenges) natively in the game. In this case the `type`-property could be used as well for the same visual grouping.
