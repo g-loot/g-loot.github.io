@@ -61,7 +61,7 @@ Fetches all leaderboards for a specific game. Will return a paginated list. The 
 | gameId | **path** | **yes** | string | - | The game id for which the leaderboards should be fetched. |
 | limit | query | no | int | 100 | For pagination. The maximum number of entries that the answer can contain. |
 | cursor | query | no | string | - | For pagination. The pointer to the next set of entries to retrieve. |
-| state | query | no | "active" - "inactive" - "all" | "all" | For filtering the entries by a specific state. State `active` only fetches ongoing leaderboards. |
+| state | query | no | [see states](sls-guide.md#leaderboard-states) | - | For filtering the entries by a specific state. State `ACTIVE` only fetches ongoing leaderboards. |
 | type | query | no | string | - | For filtering the entries by type. Enables the consumer to make arbitrary groups based on a free-text string. |
 
 **Success response 200**:

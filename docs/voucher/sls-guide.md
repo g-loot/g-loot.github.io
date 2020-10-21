@@ -40,6 +40,20 @@ There is three retry strategies that could be used for a leaderboard:
 
 One of these strategies will be chosen when G-Loot configures the leaderboard.
 
+### Leaderboard States
+
+A leaderboard can have the following states:
+
+| State         | Accept scores | Description                                                                                  |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------- |
+| SCHEDULED     | no            | Not active yet. It will remain in this state until the start time has come to pass.          |
+| ACTIVE        | yes           | Is active and accepts score submissions.                                                     |
+| CLOSED        | no            | The end date has been passed and no more scores will be accepted.                            |
+| ENDED         | no            | All the post processing has been completed and the prizes has been delivered to the players. |
+| ILLEGAL_STATE | no            | Configuration error.                                                                         |
+
+When [fetching leaderboards for a game](sls-api.md#get-all-leaderboards-for-a-game), the results can be filtered by using the `state` query parameter to only fetch leaderboards in a certain state.
+
 ## Advanced Usage
 
 ### New leaderboards without updating game
