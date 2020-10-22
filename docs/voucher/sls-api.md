@@ -178,8 +178,9 @@ Submits a result that should be displayed on the leaderboard.
 
 ### Leaderboard
 
-| description            | Required | string  | A short text describing the process and objectives of the tournament.                                                                                                                      |
+| description            | Required | Type    | Description                                                                                                                                                                                |
 | ---------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| description            | no       | string  | A short text describing the process and objectives of the contest.                                                                                                                         |
 | endDate                | no       | integer | Epoch time (ms) when the leaderboard will turn inactive.                                                                                                                                   |
 | exteralReference       | no       | string  | An id corresponding to a game-internal asset, for example an achievement-id that the leaderboard should be associated with.                                                                |
 | gameId                 | yes      | string  | Id of the game this leaderboard belongs to.                                                                                                                                                |

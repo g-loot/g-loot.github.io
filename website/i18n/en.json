@@ -31,6 +31,10 @@
         "title": "Web Application Events",
         "sidebar_label": "Web Application Events"
       },
+      "voucher/compliance-api": {
+        "title": "API Specification",
+        "sidebar_label": "API specification"
+      },
       "voucher/delivering-vouchers": {
         "title": "Delivering Vouchers",
         "sidebar_label": "Delivering vouchers"
