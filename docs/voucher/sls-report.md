@@ -38,7 +38,7 @@ Please use the highest security algorithm, that is available for your platform.
 
 ### SALT
 The salt is free for the customer to decide upon, it is important that it varies between calls and is very unlikely to be the same. There is no technical limitation which states that it needs to be unique.
-This is used in order to avoid generating multiple known requests with know field variability, which could be used for trying to crack the secret/private key.
+This is used in order to avoid generating multiple known requests with known field variability, which could be used for trying to crack the secret/private key.
 
 Example of a basic salt could be, in java.
 ```
