@@ -1,7 +1,11 @@
 {
   "docs": {
-    "General": ["mobile/about"],
-    "Tracking": ["mobile/tracking-web-application-events"],
+    "General": [
+      "mobile/about"
+    ],
+    "Tracking": [
+      "mobile/tracking-web-application-events"
+    ],
     "Integrations": [
       "mobile/integrations-native",
       "mobile/integrations-android",
@@ -9,7 +13,10 @@
     ]
   },
   "docs-other": {
-    "Introduction": ["voucher/intro", "voucher/prerequisites"],
+    "Introduction": [
+      "voucher/intro",
+      "voucher/prerequisites"
+    ],
     "The process": [
       "voucher/getting-vouchers",
       "voucher/hosting-tournament",
@@ -18,7 +25,8 @@
     "Leaderboard service": [
       "voucher/sls-intro",
       "voucher/sls-guide",
-      "voucher/sls-api"
+      "voucher/sls-api",
+      "voucher/sls-report"
     ]
   }
 }

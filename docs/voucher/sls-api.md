@@ -128,6 +128,7 @@ Submits a result that should be displayed on the leaderboard.
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
 |------|------|----------|-------|---------|-------------|
+| X-Gloot-SLS-Checksum | **header** | **no** | [see report page](./sls-report/#x-gloot-sls-checksum) | - | Checksum used for verifying the validity of the result. Read more about how this works [here](./sls-report)|
 | gameId | **path** | **yes** | string | - | The game id to which the leaderboard belongs. |
 | leaderboardId | **path** | **yes** | string | - | The id of the leaderboard that should be fetched |
 

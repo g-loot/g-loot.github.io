@@ -66,6 +66,10 @@
       "voucher/sls-intro": {
         "title": "Simple leaderboard service",
         "sidebar_label": "Introduction"
+      },
+      "voucher/sls-report": {
+        "title": "Report score",
+        "sidebar_label": "Report score"
       }
     },
     "links": {
