@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Report score · G-Loot Esports Platform</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Report score · G-Loot Esports Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.gloot.com/"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://developers.gloot.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.gloot.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/css/global.css"/><link rel="stylesheet" href="/css/header.css"/><link rel="stylesheet" href="/css/landing.css"/><link rel="stylesheet" href="/css/sidebar.css"/><link rel="stylesheet" href="/css/custom.css"/><link rel="stylesheet" href="/fonts/fonts.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/segment.analytics.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo_green.png" alt="G-Loot Esports Platform"/><h2 class="headerTitleWithLogo">G-Loot Esports Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/mobile/about" target="_self">Mobile game wrapper</a></li><li class="siteNavGroupActive"><a href="/docs/en/voucher/intro" target="_self">G-Rewards</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Leaderboard service</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/prerequisites">Prerequisites &amp; limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">The process</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/getting-vouchers">Getting vouchers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/hosting-tournament">Hosting the tournament</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/delivering-vouchers">Delivering vouchers</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Leaderboard service</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-guide">Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-api">API specification</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/voucher/sls-report">Report score</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Report score</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>In case of a C2B (Client to backend) communication there is sometimes a need to improve upon the security when it comes to reporting the score.
+Without these precautions a user could quite easily sniff the data being sent by the game client and modify it, improving on their own score.</p>
+<p>We do this by simply adding a header <a href="#x-gloot-sls-checksum">X-Gloot-SLS-Checksum</a>.
+This <a href="#calculate-the-checksum">checksum</a> will verify the validity of the payload.</p>
+<h3><a class="anchor" aria-hidden="true" id="secret-private-key"></a><a href="#secret-private-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secret / Private Key</h3>
+<p>A secret / private key needs to be created by G-Loot and will be common for all your leaderboards. This private key is preshared with the game developer and must be included within the client software generating the outbound HTTP requests.
+This <em>MUST</em> be hidden from the users. If some means of obfuscation/security exists, please employ it.</p>
+<h3><a class="anchor" aria-hidden="true" id="x-gloot-sls-checksum"></a><a href="#x-gloot-sls-checksum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>X-Gloot-SLS-Checksum</h3>
+<table>
+<thead>
+<tr><th>Header</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>X-Gloot-SLS-Checksum</td><td><a href="#algorithm">ALGORITHM</a>:<a href="#salt">SALT</a>:<a href="#calculate-the-checksum">CHECKSUM</a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="algorithm"></a><a href="#algorithm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ALGORITHM</h3>
+<p>This selects which algorithm the checksum has been calculated with.
+Below are a list of the supported algorithms.</p>
+<table>
+<thead>
+<tr><th>Value</th><th>Name</th><th>Lengths</th><th>Security level</th></tr>
+</thead>
+<tbody>
+<tr><td>MD5</td><td>Message Digest</td><td>32 digits long</td><td><em>not recommended</em></td></tr>
+<tr><td>SHA-1</td><td>Secure Hash Algorithm 1</td><td>40 digits long</td><td><em>not recommended</em></td></tr>
+<tr><td>SHA-256</td><td>Secure Hash Algorithm 2</td><td>64 digits long</td><td>good</td></tr>
+<tr><td>SHA-512</td><td>Secure Hash Algorithm 2</td><td>128 digits long</td><td><strong>recommended</strong></td></tr>
+</tbody>
+</table>
+<p>Please use the highest security algorithm, that is available for your platform.</p>
+<h3><a class="anchor" aria-hidden="true" id="salt"></a><a href="#salt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SALT</h3>
+<p>The salt is free for the customer to decide upon, it is important that it varies between calls and is very unlikely to be the same. There is no technical limitation which states that it needs to be unique.
+This is used in order to avoid generating multiple known requests with know field variability, which could be used for trying to crack the secret/private key.</p>
+<p>Example of a basic salt could be, in java.</p>
+<pre><code class="hljs">String salt = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">UUID</span>.</span></span>random<span class="hljs-constructor">UUID()</span>.<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>;
+<span class="hljs-comment">// or</span>
+String salt = <span class="hljs-string">""</span> + <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>current<span class="hljs-constructor">TimeMillis()</span>;
+</code></pre>
+<p>Make sure the salt contains no special characters that might break the means of transport, HTTP request header.
+Also make sure it does not contain the <a href="#x-gloot-sls-checksum">X-Gloot-SLS-Checksum</a> separator <code>:</code> (colon).</p>
+<h3><a class="anchor" aria-hidden="true" id="calculate-the-checksum"></a><a href="#calculate-the-checksum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calculate the checksum</h3>
+<p>The checksum is calculated using <code>algorithm(SALT + PAYLOAD + PRIVATE_KEY)</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="tying-it-all-together"></a><a href="#tying-it-all-together" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tying it all together</h2>
+<p>In order to improve on readability, the payload will be non json-compliant in this example. Please note that you must provide a properly escaped json.</p>
+<h3><a class="anchor" aria-hidden="true" id="pseudo-java"></a><a href="#pseudo-java" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pseudo-java</h3>
+<pre><code class="hljs"><span class="hljs-keyword">private</span> static final String PRIVATE_KEY = <span class="hljs-string">"...."</span>;
+
+String payload = {
+          displayValue:<span class="hljs-number">20</span>,
+          sortingValue: <span class="hljs-number">20</span>,
+          displayName: <span class="hljs-string">"Tommy"</span>,
+          email: <span class="hljs-string">"tommy@gloot.com"</span>
+};
+String salt = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">UUID</span>.</span></span>random<span class="hljs-constructor">UUID()</span>.<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>;
+
+<span class="hljs-comment">// Generate the checksum</span>
+String stringToCheck = salt + payload + PRIVATE_KEY;
+byte<span class="hljs-literal">[]</span> digest = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MessageDigest</span>.</span></span>get<span class="hljs-constructor">Instance(<span class="hljs-string">"SHA-512"</span>)</span>.digest(stringToCheck);
+String checksum = <span class="hljs-built_in">string</span><span class="hljs-constructor">ToHex(<span class="hljs-params">digest</span>)</span>;
+
+<span class="hljs-comment">// Send the result to the servers</span>
+http(<span class="hljs-string">"https://gloot-sls-dev.ey.r.appspot.com/api/v1"</span>)
+   .header(<span class="hljs-string">"X-Gloot-SLS-Checksum"</span>, <span class="hljs-string">"SHA-512:"</span> + salt + checksum)
+   .post(payload);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="http-example"></a><a href="#http-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP Example</h2>
+<pre><code class="hljs"><span class="hljs-keyword">POST</span> <span class="hljs-string">/leaderboard/duke-nukem-3d/bubble-gums-chewed-leaderboard/score</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: gloot-sls-dev.ey.r.appspot.com
+<span class="hljs-attribute">Accept</span>: */*
+<span class="hljs-attribute">Authorization</span>: Bearer .....
+<span class="hljs-attribute">x-gloot-sls-checksum</span>: sha-512:1605019728:50d21ed8cdf7b23033dcb6c85dce4cfdf17b6507851ae175dedd91877231a69672b6aa2f57395e080c2e12f45d4e394994e821d15b73da0ece0c1d57212ef3e8
+<span class="hljs-attribute">Content-Length</span>: 87
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="json">{<span class="hljs-attr">"sortingValue"</span>:<span class="hljs-number">20</span>,<span class="hljs-attr">"displayValue"</span>:<span class="hljs-string">"20"</span>,<span class="hljs-attr">"email"</span>:<span class="hljs-string">"tommy@gloot.com"</span>,<span class="hljs-attr">"displayName"</span>:<span class="hljs-string">"Tommy"</span>}
+</span></code></pre>
+<p>In this example the private key value of <code>gUmNg8MQksDLVvHtd7YfuyPPtB0KtzX7gBGm0tZpdhaxmJesvH</code> was used.</p>
+<h2><a class="anchor" aria-hidden="true" id="bash-example"></a><a href="#bash-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bash Example</h2>
+<p>If we take a look at the <a href="#http-example">example above</a>, we can take all the values from there and verify that we get the same checksum.</p>
+<pre><code class="hljs">SALT=1605019728
+PAYLOAD='{<span class="hljs-string">"sortingValue"</span>:20,<span class="hljs-string">"displayValue"</span>:<span class="hljs-string">"20"</span>,<span class="hljs-string">"email"</span>:<span class="hljs-string">"tommy@gloot.com"</span>,<span class="hljs-string">"displayName"</span>:<span class="hljs-string">"Tommy"</span>}'
+PRIVATE_KEY='gUmNg8MQksDLVvHtd7YfuyPPtB0KtzX7gBGm0tZpdhaxmJesvH'
+
+echo -n ${SALT}${PAYLOAD}${PRIVATE_KEY} | sha512sum
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/voucher/sls-api"><span class="arrow-prev">← </span><span>API specification</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#secret-private-key">Secret / Private Key</a></li><li><a href="#x-gloot-sls-checksum">X-Gloot-SLS-Checksum</a></li><li><a href="#algorithm">ALGORITHM</a></li><li><a href="#salt">SALT</a></li><li><a href="#calculate-the-checksum">Calculate the checksum</a></li></ul></li><li><a href="#tying-it-all-together">Tying it all together</a><ul class="toc-headings"><li><a href="#pseudo-java">Pseudo-java</a></li></ul></li><li><a href="#http-example">HTTP Example</a></li><li><a href="#bash-example">Bash Example</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo_green.png" alt="G-Loot Esports Platform" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 G-Loot</section></footer></div></body></html>
