@@ -51,7 +51,7 @@ Make sure the salt contains no special characters that might break the means of 
 Also make sure it does not contain the [X-Gloot-SLS-Checksum](#x-gloot-sls-checksum) separator `:` (colon).
 
 ### Calculate the checksum
-The checksum is calculated using `algorithm(SALT + PAYLOAD + PRIVATE_KEY)`.
+The checksum should be calculated using `algorithm(SALT + PAYLOAD + PRIVATE_KEY)`.
 
 ## Tying it all together
 
@@ -75,7 +75,7 @@ byte[] digest = MessageDigest.getInstance("SHA-512").digest(stringToCheck);
 String checksum = stringToHex(digest);
 
 // Send the result to the servers
-http("https://gloot-sls-dev.ey.r.appspot.com/api/v1")
+http("https://gloot-sls-dev.ey.r.appspot.com/api/v1/leaderboard/duke-nukem-3d/bubble-gums-chewed-leaderboard")
    .header("X-Gloot-SLS-Checksum", "SHA-512:" + salt + checksum)
    .post(payload);
 ```
@@ -94,7 +94,7 @@ Content-Type: application/json
 ```
 In this example the private key value of `gUmNg8MQksDLVvHtd7YfuyPPtB0KtzX7gBGm0tZpdhaxmJesvH` was used.
 
-## Bash Example
+## Shell Example
 
 If we take a look at the [example above](#http-example), we can take all the values from there and verify that we get the same checksum.
 
@@ -103,5 +103,5 @@ SALT=1605019728
 PAYLOAD='{"sortingValue":20,"displayValue":"20","email":"tommy@gloot.com","displayName":"Tommy"}'
 PRIVATE_KEY='gUmNg8MQksDLVvHtd7YfuyPPtB0KtzX7gBGm0tZpdhaxmJesvH'
 
-echo -n ${SALT}${PAYLOAD}${PRIVATE_KEY} | sha512sum
+echo -n "${SALT}${PAYLOAD}${PRIVATE_KEY}" | sha512sum
 ```
