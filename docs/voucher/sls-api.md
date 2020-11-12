@@ -34,7 +34,7 @@ Each API-response will contain these headers.
 
 ## Authorization
 
-All endpoints require a service account token in the `Authorization`-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type `Bearer` in the header.
+Protected endpoints require a service account token in the `Authorization`-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type `Bearer` in the header.
 
 Pseudo code JSON example:
 
@@ -54,6 +54,8 @@ Pseudo code JSON example:
 Fetches all leaderboards for a specific game. Will return a paginated list. The optional `?state=active` query param could be used to only fetch ongoing leaderboards.
 
 **URL** : `GET /leaderboard/:gameId`
+
+**Requires Authorization header**: no
 
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
@@ -81,6 +83,8 @@ Get a specific leaderboard by id.
 
 **URL** : `GET /leaderboard/:gameId/:leaderboardId`
 
+**Requires Authorization header**: no
+
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
 |------|------|----------|-------|---------|-------------|
@@ -94,6 +98,8 @@ Get a specific leaderboard by id.
 Returns a paginated list of all currently reported scores of the leaderboard.
 
 **URL** : `GET /leaderboard/:gameId/:leaderboardId/score`
+
+**Requires Authorization header**: no
 
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
@@ -124,6 +130,8 @@ Returns a paginated list of all currently reported scores of the leaderboard.
 Submits a result that should be displayed on the leaderboard.
 
 **URL** : `POST /leaderboard/:gameId/:leaderboardId/score`
+
+**Requires Authorization header**: yes
 
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
