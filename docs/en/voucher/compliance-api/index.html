@@ -1,35 +1,78 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>API Specification · G-Loot Esports Platform</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="API Specification · G-Loot Esports Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.gloot.com/"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://developers.gloot.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.gloot.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/css/global.css"/><link rel="stylesheet" href="/css/header.css"/><link rel="stylesheet" href="/css/landing.css"/><link rel="stylesheet" href="/css/sidebar.css"/><link rel="stylesheet" href="/css/custom.css"/><link rel="stylesheet" href="/fonts/fonts.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/segment.analytics.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo_green.png" alt="G-Loot Esports Platform"/><h2 class="headerTitleWithLogo">G-Loot Esports Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/mobile/about" target="_self">Mobile game wrapper</a></li><li class=""><a href="/docs/en/voucher/intro" target="_self">G-Rewards</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">API Specification</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>API Specification · G-Loot Esports Platform</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="API Specification · G-Loot Esports Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.gloot.com/"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://developers.gloot.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.gloot.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/css/global.css"/><link rel="stylesheet" href="/css/header.css"/><link rel="stylesheet" href="/css/landing.css"/><link rel="stylesheet" href="/css/sidebar.css"/><link rel="stylesheet" href="/css/custom.css"/><link rel="stylesheet" href="/fonts/fonts.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/segment.analytics.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo_green.png" alt="G-Loot Esports Platform"/><h2 class="headerTitleWithLogo">G-Loot Esports Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/mobile/about" target="_self">Mobile game wrapper</a></li><li class="siteNavGroupActive"><a href="/docs/en/voucher/intro" target="_self">G-Rewards</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Compliance service</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/prerequisites">Prerequisites &amp; limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">The process</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/getting-vouchers">Getting vouchers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/hosting-tournament">Hosting the tournament</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/delivering-vouchers">Delivering vouchers</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Leaderboard service</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-guide">Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-api">API specification</a></li><li class="navListItem"><a class="navItem" href="/docs/en/voucher/sls-report">Report score</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Compliance service</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/voucher/compliance-guide">Guide</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/voucher/compliance-api">API specification</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">API Specification</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
 <h3><a class="anchor" aria-hidden="true" id="base-urls"></a><a href="#base-urls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Base urls:</h3>
 <ul>
-<li>dev: xxx</li>
-<li>prod: xxx</li>
+<li>dev: <a href="https://compliance-gloot-dev.appspot.com/api/v1">https://compliance-gloot-dev.appspot.com/api/v1</a></li>
+<li>prod: <a href="https://compliance-gloot.appspot.com/api/v1">https://compliance-gloot.appspot.com/api/v1</a></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="endpoints"></a><a href="#endpoints" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoints</h3>
 <ul>
-<li><a href="#get-status-for-caller">Get status for caller</a> : <code>GET /status</code></li>
-<li><a href="#get-status-for-ip">Get status for ip</a> : <code>GET /status/:ip</code></li>
-<li><a href="#get-geodata-for-caller">Get geodata for caller</a> : <code>GET /geodata</code></li>
-<li><a href="#get-geodata-for-ip">Get geodata for ip</a> : <code>GET /geodata/:ip</code></li>
+<li><a href="#get-status">Get status</a> : <code>GET /status</code></li>
+<li><a href="#get-geodata">Get geodata</a> : <code>GET /geodata</code></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="response-data"></a><a href="#response-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Response data</h3>
 <ul>
 <li><a href="#status">Status</a></li>
 <li><a href="#geodata">Geodata</a></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="response-headers"></a><a href="#response-headers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Response Headers</h3>
-<p>Each API-response will contain these headers.</p>
-<table>
-<thead>
-<tr><th>name</th><th>type</th><th>example</th><th>description</th></tr>
-</thead>
-<tbody>
-<tr><td>x-started-processing-at</td><td>number</td><td>1603188776750</td><td>Epoch time (ms) when the server started processing the call</td></tr>
-<tr><td>x-ended-processing-at</td><td>number</td><td>1603188776750</td><td>Epoch time (ms) when the server finished processing the call</td></tr>
-</tbody>
-</table>
 <h2><a class="anchor" aria-hidden="true" id="authorization"></a><a href="#authorization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authorization</h2>
-<p>The endpoints requesting data for the caller is open.</p>
-<p>The endpoints that fetch information by for another IP adress than the machine making the call needs a service account token in the <code>Authorization</code>-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type <code>Bearer</code> in the header.</p>
+<p>When requesting status or geodata, if the <code>ip</code>-query parameter is omitted, the call will use the ip-adress of the machine making the call. In this case no authentication is required.</p>
+<p>When requesting status or geodata for another IP adress than the machine making the call, the request needs a service account token in the <code>Authorization</code>-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type <code>Bearer</code> in the header.</p>
 <p>Pseudo code JSON example:</p>
 <pre><code class="hljs">{
   <span class="hljs-attr">"headers"</span>: {
@@ -39,50 +82,39 @@
 }
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="endpoints-1"></a><a href="#endpoints-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endpoints</h2>
-<h3><a class="anchor" aria-hidden="true" id="get-status-for-caller"></a><a href="#get-status-for-caller" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get status for caller</h3>
-<p>Returns whether or not a client is allowed to compete on our platform based on the IP adress of the device making the call. If available, the geodata of the ip will be passed for convenience.</p>
-<p><strong>URL</strong> : <code>GET /status</code></p>
-<p><strong>Authentication required</strong> : no</p>
-<p><strong>Success response 200</strong>: <a href="#status">Status</a></p>
-<h3><a class="anchor" aria-hidden="true" id="get-status-for-ip"></a><a href="#get-status-for-ip" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get status for ip</h3>
+<h3><a class="anchor" aria-hidden="true" id="get-status"></a><a href="#get-status" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get status</h3>
 <p>Returns whether or not a specific IP adress is allowed to compete on our platform. If available, the geodata of the ip will be passed for convenience.</p>
-<p><strong>URL</strong> : <code>GET /status/:ip</code></p>
-<p><strong>Authentication required</strong> : yes</p>
+<p><strong>URL</strong> : <code>GET /status</code></p>
+<p><strong>Authentication required</strong> : If <code>ip</code>-query parameter is specified with an ip-adress other than the machine making the call, yes.</p>
 <p><strong>Parameters</strong>:</p>
 <table>
 <thead>
 <tr><th>Name</th><th>Type</th><th>required</th><th>Value</th><th>Default</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>ip</td><td>path</td><td>yes</td><td>string</td><td>-</td><td>The ip adress for which the status should be fetched</td></tr>
+<tr><td>ip</td><td>query</td><td>no</td><td>string</td><td>-</td><td>The ip adress for which the status should be fetched. Defaults to the ip of the caller.</td></tr>
 </tbody>
 </table>
-<p><strong>Success response 200</strong>: <a href="#status">Status</a>
-<strong>Error response 403</strong>: no content (faulty or missing authorization token)
-<strong>Error response 422</strong>: no content (invalid IP adress provided)</p>
-<h3><a class="anchor" aria-hidden="true" id="get-geodata-for-caller"></a><a href="#get-geodata-for-caller" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get geodata for caller</h3>
-<p>Returns the location data of the caller. Based on the IP adress of the device making the call.</p>
-<p><strong>URL</strong> : <code>GET /geodata</code></p>
-<p><strong>Authentication required</strong> : no</p>
-<p><strong>Success response 200</strong>: <a href="#geodata">Geodata</a>
-<strong>Error response 404</strong>: no content (geodata does not exist for the given resource)</p>
-<h3><a class="anchor" aria-hidden="true" id="get-geodata-for-ip"></a><a href="#get-geodata-for-ip" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get geodata for ip</h3>
+<p><strong>Success response 200</strong>: <a href="#status">Status</a></p>
+<p><strong>Error response 403</strong>: no content (faulty or missing authorization token)</p>
+<p><strong>Error response 422</strong>: no content (invalid IP adress provided)</p>
+<h3><a class="anchor" aria-hidden="true" id="get-geodata"></a><a href="#get-geodata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get geodata</h3>
 <p>Returns the location data of a specific IP adress.</p>
-<p><strong>URL</strong> : <code>GET /geodata/:ip</code></p>
-<p><strong>Authentication required</strong> : yes</p>
+<p><strong>URL</strong> : <code>GET /geodata</code></p>
+<p><strong>Authentication required</strong> : If <code>ip</code>-query parameter is specified with an ip-adress other than the machine making the call, yes.</p>
 <p><strong>Parameters</strong>:</p>
 <table>
 <thead>
 <tr><th>Name</th><th>Type</th><th>required</th><th>Value</th><th>Default</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>ip</td><td>path</td><td>yes</td><td>string</td><td>-</td><td>The IP adress for which the geodata should be fetched</td></tr>
+<tr><td>ip</td><td>query</td><td>no</td><td>string</td><td>-</td><td>The IP adress for which the geodata should be fetched. Defaults to the ip of the caller.</td></tr>
 </tbody>
 </table>
-<p><strong>Success response 200</strong>: <a href="#geodata">Geodata</a>
-<strong>Error response 404</strong>: no content (geodata could not be found)
-<strong>Error response 403</strong>: no content (faulty or missing authorization token)
-<strong>Error response 422</strong>: no content (invalid IP adress provided)</p>
+<p><strong>Success response 200</strong>: <a href="#geodata">Geodata</a></p>
+<p><strong>Error response 404</strong>: no content (geodata could not be found)</p>
+<p><strong>Error response 403</strong>: no content (faulty or missing authorization token)</p>
+<p><strong>Error response 422</strong>: no content (invalid IP adress provided)</p>
 <h2><a class="anchor" aria-hidden="true" id="data-types"></a><a href="#data-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data types</h2>
 <h3><a class="anchor" aria-hidden="true" id="status"></a><a href="#status" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Status</h3>
 <table>
@@ -125,4 +157,4 @@
   <span class="hljs-string">"city"</span>    : <span class="hljs-string">"Stockholm"</span>
 }
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#base-urls">Base urls:</a></li><li><a href="#endpoints">Endpoints</a></li><li><a href="#response-data">Response data</a></li><li><a href="#response-headers">Response Headers</a></li></ul></li><li><a href="#authorization">Authorization</a></li><li><a href="#endpoints-1">Endpoints</a><ul class="toc-headings"><li><a href="#get-status-for-caller">Get status for caller</a></li><li><a href="#get-status-for-ip">Get status for ip</a></li><li><a href="#get-geodata-for-caller">Get geodata for caller</a></li><li><a href="#get-geodata-for-ip">Get geodata for ip</a></li></ul></li><li><a href="#data-types">Data types</a><ul class="toc-headings"><li><a href="#status">Status</a></li><li><a href="#geodata">Geodata</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo_green.png" alt="G-Loot Esports Platform" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 G-Loot</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/voucher/compliance-guide"><span class="arrow-prev">← </span><span>Guide</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#base-urls">Base urls:</a></li><li><a href="#endpoints">Endpoints</a></li><li><a href="#response-data">Response data</a></li></ul></li><li><a href="#authorization">Authorization</a></li><li><a href="#endpoints-1">Endpoints</a><ul class="toc-headings"><li><a href="#get-status">Get status</a></li><li><a href="#get-geodata">Get geodata</a></li></ul></li><li><a href="#data-types">Data types</a><ul class="toc-headings"><li><a href="#status">Status</a></li><li><a href="#geodata">Geodata</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo_green.png" alt="G-Loot Esports Platform" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 G-Loot</section></footer></div></body></html>
