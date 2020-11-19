@@ -35,6 +35,10 @@
         "title": "API Specification",
         "sidebar_label": "API specification"
       },
+      "voucher/compliance-guide": {
+        "title": "Guide",
+        "sidebar_label": "Guide"
+      },
       "voucher/delivering-vouchers": {
         "title": "Delivering Vouchers",
         "sidebar_label": "Delivering vouchers"
@@ -82,7 +86,8 @@
       "Integrations": "Integrations",
       "Introduction": "Introduction",
       "The process": "The process",
-      "Leaderboard service": "Leaderboard service"
+      "Leaderboard service": "Leaderboard service",
+      "Compliance service": "Compliance service"
     }
   },
   "pages-strings": {

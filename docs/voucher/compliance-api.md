@@ -8,35 +8,24 @@ sidebar_label: API specification
 
 ### Base urls:
 
-- dev: xxx
-- prod: xxx
+- dev: https://compliance-gloot-dev.appspot.com/api/v1
+- prod: https://compliance-gloot.appspot.com/api/v1
 
 ### Endpoints
 
-- [Get status for caller](#get-status-for-caller) : `GET /status`
-- [Get status for ip](#get-status-for-ip) : `GET /status/:ip`
-- [Get geodata for caller](#get-geodata-for-caller) : `GET /geodata`
-- [Get geodata for ip](#get-geodata-for-ip) : `GET /geodata/:ip`
+- [Get status](#get-status) : `GET /status`
+- [Get geodata](#get-geodata) : `GET /geodata`
 
 ### Response data
 
 - [Status](#status)
 - [Geodata](#geodata)
 
-### Response Headers
-
-Each API-response will contain these headers.
-
-| name                    | type   | example       | description                                                  |
-| ----------------------- | ------ | ------------- | ------------------------------------------------------------ |
-| x-started-processing-at | number | 1603188776750 | Epoch time (ms) when the server started processing the call  |
-| x-ended-processing-at   | number | 1603188776750 | Epoch time (ms) when the server finished processing the call |
-
 ## Authorization
 
-The endpoints requesting data for the caller is open.
+When requesting status or geodata, if the `ip`-query parameter is omitted, the call will use the ip-adress of the machine making the call. In this case no authentication is required.
 
-The endpoints that fetch information by for another IP adress than the machine making the call needs a service account token in the `Authorization`-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type `Bearer` in the header.
+When requesting status or geodata for another IP adress than the machine making the call, the request needs a service account token in the `Authorization`-header. The token is a JWT bearer token that should be kept secret from the client. The token should be preceeded by the token type `Bearer` in the header.
 
 Pseudo code JSON example:
 
@@ -51,60 +40,44 @@ Pseudo code JSON example:
 
 ## Endpoints
 
-### Get status for caller
-
-Returns whether or not a client is allowed to compete on our platform based on the IP adress of the device making the call. If available, the geodata of the ip will be passed for convenience.
-
-**URL** : `GET /status`
-
-**Authentication required** : no
-
-**Success response 200**: [Status](#status)
-
-### Get status for ip
+### Get status
 
 Returns whether or not a specific IP adress is allowed to compete on our platform. If available, the geodata of the ip will be passed for convenience.
 
-**URL** : `GET /status/:ip`
+**URL** : `GET /status`
 
-**Authentication required** : yes
+**Authentication required** : If `ip`-query parameter is specified with an ip-adress other than the machine making the call, yes.
 
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
 |------|------|----------|-------|---------|-------------|
-| ip | path | yes | string | - | The ip adress for which the status should be fetched |
+| ip | query | no | string | - | The ip adress for which the status should be fetched. Defaults to the ip of the caller. |
 
 **Success response 200**: [Status](#status)
+
 **Error response 403**: no content (faulty or missing authorization token)
+
 **Error response 422**: no content (invalid IP adress provided)
 
-### Get geodata for caller
-
-Returns the location data of the caller. Based on the IP adress of the device making the call.
-
-**URL** : `GET /geodata`
-
-**Authentication required** : no
-
-**Success response 200**: [Geodata](#geodata)
-**Error response 404**: no content (geodata does not exist for the given resource)
-
-### Get geodata for ip
+### Get geodata
 
 Returns the location data of a specific IP adress.
 
-**URL** : `GET /geodata/:ip`
+**URL** : `GET /geodata`
 
-**Authentication required** : yes
+**Authentication required** : If `ip`-query parameter is specified with an ip-adress other than the machine making the call, yes.
 
 **Parameters**:
 | Name | Type | required | Value | Default | Description |
 |------|------|----------|-------|---------|-------------|
-| ip | path | yes | string | - | The IP adress for which the geodata should be fetched |
+| ip | query | no | string | - | The IP adress for which the geodata should be fetched. Defaults to the ip of the caller. |
 
 **Success response 200**: [Geodata](#geodata)
+
 **Error response 404**: no content (geodata could not be found)
+
 **Error response 403**: no content (faulty or missing authorization token)
+
 **Error response 422**: no content (invalid IP adress provided)
 
 ## Data types
