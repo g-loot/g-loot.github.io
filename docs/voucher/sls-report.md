@@ -21,7 +21,7 @@ This *MUST* be hidden from the users. If some means of obfuscation/security exis
 
 | Header | Value |
 |------|------|
-|X-Gloot-SLS-Checksum| [ALGORITHM](#algorithm):[SALT](#salt):[CHECKSUM](#calculate-the-checksum)|
+|X-Gloot-SLS-Checksum| [ALGORITHM](#algorithm):[GAME](#game):[KID](#kid):[SALT](#salt):[CHECKSUM](#calculate-the-checksum)|
 
 ### ALGORITHM
 This selects which algorithm the checksum has been calculated with.
@@ -35,6 +35,14 @@ Below are a list of the supported algorithms.
 |SHA-512| Secure Hash Algorithm 2 | 128 digits long | **recommended**|
 
 Please use the highest security algorithm, that is available for your platform.
+
+### GAME
+This is the name of your game as provided by G-Loot.
+
+### KID
+This is the key id as provided by G-Loot.
+You may have multiple keys in order to separate them between clients etc.
+For instance, if you have a PC client and a MAC client you might want to use separate private keys for those clients. This will allow us to revoke a private key and just affect 50% of the user base instead of 100%.
 
 ### SALT
 The salt is free for the customer to decide upon, it is important that it varies between calls and is very unlikely to be the same. There is no technical limitation which states that it needs to be unique.
@@ -76,7 +84,7 @@ String checksum = stringToHex(digest);
 
 // Send the result to the servers
 http("https://gloot-sls-dev.ey.r.appspot.com/api/v1/leaderboard/duke-nukem-3d/bubble-gums-chewed-leaderboard")
-   .header("X-Gloot-SLS-Checksum", "SHA-512:" + salt + checksum)
+   .header("X-Gloot-SLS-Checksum", "SHA-512:game:a" + salt + checksum)
    .post(payload);
 ```
 
@@ -86,7 +94,7 @@ POST /leaderboard/duke-nukem-3d/bubble-gums-chewed-leaderboard/score HTTP/1.1
 Host: gloot-sls-dev.ey.r.appspot.com
 Accept: */*
 Authorization: Bearer .....
-x-gloot-sls-checksum: sha-512:1605019728:50d21ed8cdf7b23033dcb6c85dce4cfdf17b6507851ae175dedd91877231a69672b6aa2f57395e080c2e12f45d4e394994e821d15b73da0ece0c1d57212ef3e8
+x-gloot-sls-checksum: sha-512:game:a:1605019728:50d21ed8cdf7b23033dcb6c85dce4cfdf17b6507851ae175dedd91877231a69672b6aa2f57395e080c2e12f45d4e394994e821d15b73da0ece0c1d57212ef3e8
 Content-Length: 87
 Content-Type: application/json
 
