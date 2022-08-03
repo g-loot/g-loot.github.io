@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "protobuf-feature-events", "label": "protobuf-feature-events", "shape": "dot"}, {"id": "stats-service", "label": "stats-service", "shape": "dot"}, {"id": "overwolf-translator-service", "label": "overwolf-translator-service", "shape": "dot"}, {"id": "youbet-gae", "label": "youbet-gae", "shape": "dot"}, {"id": "games-status-service", "label": "games-status-service", "shape": "dot"}, {"id": "game-configuration-service", "label": "game-configuration-service", "shape": "dot"}, {"id": "team-service", "label": "team-service", "shape": "dot"}, {"id": "tournament-service", "label": "tournament-service", "shape": "dot"}, {"id": "rating-service", "label": "rating-service", "shape": "dot"}, {"id": "pubg-integration-service", "label": "pubg-integration-service", "shape": "dot"}, {"id": "tournament-leaderboard-service", "label": "tournament-leaderboard-service", "shape": "dot"}, {"id": "reward-service", "label": "reward-service", "shape": "dot"}, {"id": "gload-service", "label": "gload-service", "shape": "dot"}, {"id": "multiple-round-challenge-service", "label": "multiple-round-challenge-service", "shape": "dot"}, {"id": "push-event-service", "label": "push-event-service", "shape": "dot"}, {"id": "coin-service", "label": "coin-service", "shape": "dot"}, {"id": "mission-service", "label": "mission-service", "shape": "dot"}, {"id": "gloot-search-service", "label": "gloot-search-service", "shape": "dot"}, {"id": "external-stats-service", "label": "external-stats-service", "shape": "dot"}, {"id": "party-organizer", "label": "party-organizer", "shape": "dot"}, {"id": "claim-streak-service", "label": "claim-streak-service", "shape": "dot"}, {"id": "stats-collector-service", "label": "stats-collector-service", "shape": "dot"}, {"id": "region-service", "label": "region-service", "shape": "dot"}, {"id": "wix-service", "label": "wix-service", "shape": "dot"}, {"id": "stats-hub-service", "label": "stats-hub-service", "shape": "dot"}, {"id": "ban-point-service", "label": "ban-point-service", "shape": "dot"}, {"id": "any-brain-service", "label": "any-brain-service", "shape": "dot"}, {"id": "tournament-result-reporter", "label": "tournament-result-reporter", "shape": "dot"}, {"id": "pubg-api-provider-service", "label": "pubg-api-provider-service", "shape": "dot"}, {"id": "stats-collect-schedule-service", "label": "stats-collect-schedule-service", "shape": "dot"}, {"id": "valorant-api-provider-service", "label": "valorant-api-provider-service", "shape": "dot"}, {"id": "reward-history-service", "label": "reward-history-service", "shape": "dot"}, {"color": "red", "id": "bff", "label": "bff", "shape": "dot"}, {"color": "green", "id": "bi", "label": "bi", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": "stats-service", "label": "gloot.featureTopic", "length": 100, "to": "overwolf-translator-service"}, {"from": "stats-service", "label": "gloot.event.stats.updates", "length": 100, "to": "multiple-round-challenge-service"}, {"from": "stats-service", "label": "gloot.event.stats.updates", "length": 100, "to": "mission-service"}, {"from": "stats-service", "label": "gloot.featureTopic", "length": 100, "to": "stats-collector-service"}, {"from": "stats-service", "label": "gloot.event.stats.reset", "length": 100, "to": "pubg-api-provider-service"}, {"from": "stats-service", "label": "gloot.event.stats.reset", "length": 100, "to": "stats-collect-schedule-service"}, {"from": "stats-service", "label": "gloot.event.stats.reset", "length": 100, "to": "valorant-api-provider-service"}, {"color": "#ff0000", "from": "stats-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#00ff00", "from": "stats-service", "label": "gloot.event.stats.updates", "length": 100, "to": "bi"}, {"from": "overwolf-translator-service", "label": "gloot.featureTopic", "length": 100, "to": "stats-collector-service"}, {"from": "overwolf-translator-service", "label": "gloot.featureTopic", "length": 100, "to": "pubg-api-provider-service"}, {"from": "overwolf-translator-service", "label": "gloot.featureTopic", "length": 100, "to": "stats-collect-schedule-service"}, {"from": "overwolf-translator-service", "label": "gloot.featureTopic", "length": 100, "to": "valorant-api-provider-service"}, {"color": "#00ff00", "from": "overwolf-translator-service", "label": "gloot.featureTopic", "length": 100, "to": "bi"}, {"color": "#ff0000", "from": "youbet-gae", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#ff0000", "from": "games-status-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#ff0000", "from": "game-configuration-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#ff0000", "from": "team-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#ff0000", "from": "tournament-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"from": "reward-service", "label": "gloot.reward.commands", "length": 100, "to": "multiple-round-challenge-service"}, {"from": "reward-service", "label": "gloot.reward.commands", "length": 100, "to": "party-organizer"}, {"from": "reward-service", "label": "gloot.reward.commands", "length": 100, "to": "claim-streak-service"}, {"from": "reward-service", "label": "gloot.reward.events", "length": 100, "to": "reward-history-service"}, {"color": "#ff0000", "from": "reward-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#00ff00", "from": "reward-service", "label": "gloot.reward.events", "length": 100, "to": "bi"}, {"from": "multiple-round-challenge-service", "label": "gloot.event.stats.updates", "length": 100, "to": "mission-service"}, {"from": "multiple-round-challenge-service", "label": "gloot.reward.commands", "length": 100, "to": "party-organizer"}, {"from": "multiple-round-challenge-service", "label": "gloot.reward.commands", "length": 100, "to": "claim-streak-service"}, {"from": "multiple-round-challenge-service", "label": "gloot.youbet.user", "length": 100, "to": "stats-collector-service"}, {"from": "multiple-round-challenge-service", "label": "gloot.youbet.user", "length": 100, "to": "pubg-api-provider-service"}, {"from": "multiple-round-challenge-service", "label": "gloot.youbet.user", "length": 100, "to": "stats-collect-schedule-service"}, {"from": "multiple-round-challenge-service", "label": "gloot.youbet.user", "length": 100, "to": "valorant-api-provider-service"}, {"color": "#ff0000", "from": "multiple-round-challenge-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#00ff00", "from": "multiple-round-challenge-service", "label": "gloot.event.stats.updates", "length": 100, "to": "bi"}, {"color": "#ff0000", "from": "coin-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#ff0000", "from": "mission-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#00ff00", "from": "mission-service", "label": "gloot.event.stats.updates", "length": 100, "to": "bi"}, {"from": "party-organizer", "label": "gloot.reward.commands", "length": 100, "to": "claim-streak-service"}, {"color": "#ff0000", "from": "claim-streak-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"from": "stats-collector-service", "label": "gloot.brawl.events", "length": 100, "to": "pubg-api-provider-service"}, {"from": "stats-collector-service", "label": "gloot.brawl.events", "length": 100, "to": "stats-collect-schedule-service"}, {"from": "stats-collector-service", "label": "gloot.brawl.events", "length": 100, "to": "valorant-api-provider-service"}, {"color": "#ff0000", "from": "stats-collector-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#00ff00", "from": "stats-collector-service", "label": "gloot.brawl.events", "length": 100, "to": "bi"}, {"from": "pubg-api-provider-service", "label": "gloot.brawl.events", "length": 100, "to": "stats-collect-schedule-service"}, {"from": "pubg-api-provider-service", "label": "gloot.brawl.events", "length": 100, "to": "valorant-api-provider-service"}, {"color": "#00ff00", "from": "pubg-api-provider-service", "label": "gloot.brawl.events", "length": 100, "to": "bi"}, {"from": "stats-collect-schedule-service", "label": "gloot.brawl.events", "length": 100, "to": "valorant-api-provider-service"}, {"color": "#00ff00", "from": "stats-collect-schedule-service", "label": "gloot.brawl.events", "length": 100, "to": "bi"}, {"color": "#00ff00", "from": "valorant-api-provider-service", "label": "gloot.brawl.events", "length": 100, "to": "bi"}, {"color": "#ff0000", "from": "reward-history-service", "label": "bff-consume", "length": 100, "to": "bff"}, {"color": "#00ff00", "from": "reward-history-service", "label": "gloot.reward.events", "length": 100, "to": "bi"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -80000,
+            "springConstant": 0.001,
+            "springLength": 50
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
